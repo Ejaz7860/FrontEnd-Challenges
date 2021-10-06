@@ -17,9 +17,9 @@
 
     <header>
         <a href="#banner" class="logo">Food<span>.</span></a>
-        <div class="menuToggle" onclick="menuToggle()" ></div>
+        <div class="menuToggle" onclick="menuToggle()"></div>
         <ul class="navigation">
-            <li><a href="#banner"  onclick="menuToggle()">Home</a></li>
+            <li><a href="#banner" onclick="menuToggle()">Home</a></li>
             <li><a href="#about" onclick="menuToggle()">About</a></li>
             <li><a href="#menu" onclick="menuToggle()">Menu</a></li>
             <li><a href="#expert" onclick="menuToggle()">Expert</a></li>
@@ -34,7 +34,8 @@
     <section class="banner" id="banner">
         <div class="content">
             <h2>Always Choose Good</h2>
-            <p class="foodPara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus magni suscipit porro minima
+            <p class="foodPara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus magni suscipit
+                porro minima
                 mollitia
                 saepe culpa similique dolore doloremque nulla quos repellendus consequuntur qui beatae ratione,
                 nihil
@@ -324,7 +325,23 @@
         </div>
     </footer>
 
-    <script src="/script.js">
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+
+        function menuToggle() {
+            const mToggle = document.querySelector('.menuToggle');
+
+            const navigation = document.querySelector('.navigation');
+            mToggle.classList.toggle('active');
+            navigation.classList.toggle('active')
+        }
+
+
+
     </script>
 </body>
 
